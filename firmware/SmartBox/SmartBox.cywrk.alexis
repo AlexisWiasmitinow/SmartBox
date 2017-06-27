@@ -157,52 +157,6 @@
 <VisibleNodeIds>
 <v>SmartBox</v>
 <v>SmartBox\SmartBox</v>
-<v>SmartBox\SmartBox\CortexM0</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_INT.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_intClock.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_IRQ.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\ADC_SAR_Seq_1_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_bless_isr.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_custom.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_eventHandler.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_gatt.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_HAL_INT.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\BLE_1_HAL_PVT.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Blinker.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Blinker_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Clock_1.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Cm0Start.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLFClk.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\main.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Ain.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Ain_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Beep.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Beep_Enable.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Beep_Enable_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Beep_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Button.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_Button_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_B.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_B_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_Ext.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_Ext_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_G.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_G_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_R.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\Listing Files\Pin_LED_R_PM.lst</v>
-<v>SmartBox\SmartBox\CortexM0\ARM_GCC_541\Debug\SmartBox.elf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -258,9 +212,8 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\SmartBox.cydsn\main.c" />
-<name v=".\SmartBox.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\SmartBox.cydsn\SmartBox.cydwr" />
+<name v=".\SmartBox.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -268,7 +221,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1590, 712" SelectedTabbedMdiWindow="309e22e9-aafd-4eff-84f6-a30df7e4fb2c"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f38df9df-f3a1-41d0-9049-1fbe9c2bb7be" /><DocumentWindow Key="E:\BLE_Projects\Test\SmartBox.cydsn\main.c" Guid="75440a82-3e39-4215-a563-5b527fedf80d" /><DocumentWindow Key="E:\BLE_Projects\Test\SmartBox.cydsn\TopDesign\TopDesign.cysch" Guid="c98da309-6064-41d5-b1e2-9aecfa5da38e" /><DocumentWindow Key="E:\BLE_Projects\Test\SmartBox.cydsn\SmartBox.cydwr" Guid="309e22e9-aafd-4eff-84f6-a30df7e4fb2c" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1336, 712" SelectedTabbedMdiWindow="92a23fb3-77e5-433b-b2fc-e05acb0b3a49"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="f38df9df-f3a1-41d0-9049-1fbe9c2bb7be" /><DocumentWindow Key="E:\GitHub\SmartBox\firmware\SmartBox\SmartBox.cydsn\SmartBox.cydwr" Guid="efa800ae-646c-4380-9eee-a2d0c10f8899" /><DocumentWindow Key="E:\GitHub\SmartBox\firmware\SmartBox\SmartBox.cydsn\TopDesign\TopDesign.cysch" Guid="92a23fb3-77e5-433b-b2fc-e05acb0b3a49" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
