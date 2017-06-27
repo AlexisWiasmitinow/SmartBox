@@ -1,0 +1,38 @@
+# SmartBox
+# 2017-06-27 08:39:24Z
+
+# IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 6
+# IO_7@[IOP=(0)][IoId=(7)] is reserved: SWDDebugEnabled
+dont_use_io iocell 0 7
+# IO_0@[IOP=(6)][IoId=(0)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 0
+# IO_1@[IOP=(6)][IoId=(1)] is reserved: KhzXtalEnabled
+dont_use_io iocell 6 1
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_io "Pin_LED_R(0)" iocell 2 6
+set_io "Pin_LED_G(0)" iocell 3 6
+set_io "Pin_LED_B(0)" iocell 3 7
+set_io "Pin_LED_Ext(0)" iocell 3 0
+set_io "Pin_Beep(0)" iocell 3 1
+set_io "Pin_Ain(0)" iocell 3 2
+set_io "Pin_Button(0)" iocell 3 3
+set_io "Pin_Beep_Enable(0)" iocell 3 5
+set_location "\Blinker:PWMUDB:status_2\" 0 0 0 1
+set_location "Net_142" 0 0 1 0
+set_location "\BLE_1:cy_m0s8_ble\" p4blecell -1 -1 0
+set_location "\BLE_1:bless_isr\" interrupt -1 -1 12
+set_location "\ADC_SAR_Seq_1:IRQ\" interrupt -1 -1 15
+set_location "\ADC_SAR_Seq_1:cy_psoc4_sar\" p4sarcell -1 -1 0
+set_location "\Blinker:PWMUDB:genblk1:ctrlreg\" 0 0 6
+set_location "\Blinker:PWMUDB:genblk8:stsreg\" 0 0 4
+set_location "\Blinker:PWMUDB:sP16:pwmdp:u0\" 1 0 2
+set_location "\Blinker:PWMUDB:sP16:pwmdp:u1\" 0 0 2
+set_location "\Blinker:PWMUDB:runmode_enable\" 0 0 0 0
+set_location "\Blinker:PWMUDB:prevCompare1\" 0 0 1 1
+set_location "\Blinker:PWMUDB:prevCompare2\" 1 0 0 2
+set_location "\Blinker:PWMUDB:status_0\" 0 0 1 2
+set_location "\Blinker:PWMUDB:status_1\" 1 0 0 0
+set_location "Net_119" 0 0 0 2
+set_location "Net_141" 0 0 0 3

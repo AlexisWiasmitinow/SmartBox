@@ -1,0 +1,6 @@
+E:\GitHub\SmartBox\firmware\SmartBox\SmartBox.cydsn\SmartBox.cyprj|618a7e03-c503-4db6-bce7-78e063ab7ea3
+E:\PSoC Creator\4.1\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|cdd7cd22-f18f-4898-8f4a-951dac610188
+C:\Users\alexis\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|2bba27da-ebac-4f27-92b1-73dcebcb52e7
+E:\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b1b82f27-d186-4aee-b2ba-49a58a22fc7c
+E:\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|f0406dae-fe1a-46fc-940f-c9709c179f90
+E:\PSoC Creator\4.1\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|1335127d-286c-49c0-9011-614561d17d60

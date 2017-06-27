@@ -1,0 +1,1421 @@
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"BLE_1_custom.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.CyBle_CustomInit,"ax",%progbits
+  20              		.align	2
+  21              		.global	CyBle_CustomInit
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	CyBle_CustomInit, %function
+  25              	CyBle_CustomInit:
+  26              	.LFB2:
+  27              		.file 1 "Generated_Source\\PSoC4\\BLE_1_custom.c"
+   1:Generated_Source\PSoC4/BLE_1_custom.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC4/BLE_1_custom.c **** * \file CYBLE_custom.c
+   3:Generated_Source\PSoC4/BLE_1_custom.c **** * \version 3.30
+   4:Generated_Source\PSoC4/BLE_1_custom.c **** * 
+   5:Generated_Source\PSoC4/BLE_1_custom.c **** * \brief
+   6:Generated_Source\PSoC4/BLE_1_custom.c **** *  Contains the source code for the Custom Service.
+   7:Generated_Source\PSoC4/BLE_1_custom.c **** * 
+   8:Generated_Source\PSoC4/BLE_1_custom.c **** ********************************************************************************
+   9:Generated_Source\PSoC4/BLE_1_custom.c **** * \copyright
+  10:Generated_Source\PSoC4/BLE_1_custom.c **** * Copyright 2014-2016, Cypress Semiconductor Corporation.  All rights reserved.
+  11:Generated_Source\PSoC4/BLE_1_custom.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:Generated_Source\PSoC4/BLE_1_custom.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:Generated_Source\PSoC4/BLE_1_custom.c **** * the software package with which this file was provided.
+  14:Generated_Source\PSoC4/BLE_1_custom.c **** *******************************************************************************/
+  15:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  16:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  17:Generated_Source\PSoC4/BLE_1_custom.c **** #include "BLE_1_eventHandler.h"
+  18:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  19:Generated_Source\PSoC4/BLE_1_custom.c **** #ifdef CYBLE_CUSTOM_SERVER
+  20:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  21:Generated_Source\PSoC4/BLE_1_custom.c **** /* If any custom service with custom characterisctis is defined in the
+  22:Generated_Source\PSoC4/BLE_1_custom.c **** * customizer's GUI their handles will be present in this array.
+  23:Generated_Source\PSoC4/BLE_1_custom.c **** */
+  24:Generated_Source\PSoC4/BLE_1_custom.c **** /* This array contains attribute handles for the defined Custom Services and their characteristics 
+  25:Generated_Source\PSoC4/BLE_1_custom.c ****    The array index definitions are located in the CYBLE_custom.h file. */
+  26:Generated_Source\PSoC4/BLE_1_custom.c **** const CYBLE_CUSTOMS_T cyBle_customs[0x01u] = {
+  27:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  28:Generated_Source\PSoC4/BLE_1_custom.c ****     /* SmartBox service */
+  29:Generated_Source\PSoC4/BLE_1_custom.c ****     {
+  30:Generated_Source\PSoC4/BLE_1_custom.c ****         0x0010u, /* Handle of the SmartBox service */ 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 2
+
+
+  31:Generated_Source\PSoC4/BLE_1_custom.c ****         {
+  32:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  33:Generated_Source\PSoC4/BLE_1_custom.c ****             /* Alert characteristic */
+  34:Generated_Source\PSoC4/BLE_1_custom.c ****             {
+  35:Generated_Source\PSoC4/BLE_1_custom.c ****                 0x0012u, /* Handle of the Alert characteristic */ 
+  36:Generated_Source\PSoC4/BLE_1_custom.c ****                 
+  37:Generated_Source\PSoC4/BLE_1_custom.c ****                 /* Array of Descriptors handles */
+  38:Generated_Source\PSoC4/BLE_1_custom.c ****                 {
+  39:Generated_Source\PSoC4/BLE_1_custom.c ****                     0x0013u, /* Handle of the Characteristic User Description descriptor */ 
+  40:Generated_Source\PSoC4/BLE_1_custom.c ****                 }, 
+  41:Generated_Source\PSoC4/BLE_1_custom.c ****             },
+  42:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  43:Generated_Source\PSoC4/BLE_1_custom.c ****             /* Level characteristic */
+  44:Generated_Source\PSoC4/BLE_1_custom.c ****             {
+  45:Generated_Source\PSoC4/BLE_1_custom.c ****                 0x0015u, /* Handle of the Level characteristic */ 
+  46:Generated_Source\PSoC4/BLE_1_custom.c ****                 
+  47:Generated_Source\PSoC4/BLE_1_custom.c ****                 /* Array of Descriptors handles */
+  48:Generated_Source\PSoC4/BLE_1_custom.c ****                 {
+  49:Generated_Source\PSoC4/BLE_1_custom.c ****                     0x0016u, /* Handle of the Characteristic User Description descriptor */ 
+  50:Generated_Source\PSoC4/BLE_1_custom.c ****                 }, 
+  51:Generated_Source\PSoC4/BLE_1_custom.c ****             },
+  52:Generated_Source\PSoC4/BLE_1_custom.c ****         }, 
+  53:Generated_Source\PSoC4/BLE_1_custom.c ****     },
+  54:Generated_Source\PSoC4/BLE_1_custom.c **** };
+  55:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  56:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  57:Generated_Source\PSoC4/BLE_1_custom.c **** #endif /* (CYBLE_CUSTOM_SERVER) */
+  58:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  59:Generated_Source\PSoC4/BLE_1_custom.c **** #ifdef CYBLE_CUSTOM_CLIENT
+  60:Generated_Source\PSoC4/BLE_1_custom.c ****     
+  61:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  62:Generated_Source\PSoC4/BLE_1_custom.c **** static uint16 cyBle_customDisServIndex;
+  63:Generated_Source\PSoC4/BLE_1_custom.c **** static uint16 cyBle_customDisCharIndex;
+  64:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  65:Generated_Source\PSoC4/BLE_1_custom.c **** #endif /* (CYBLE_CUSTOM_CLIENT) */
+  66:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  67:Generated_Source\PSoC4/BLE_1_custom.c **** 
+  68:Generated_Source\PSoC4/BLE_1_custom.c **** /****************************************************************************** 
+  69:Generated_Source\PSoC4/BLE_1_custom.c **** * Function Name: CyBle_CustomInit
+  70:Generated_Source\PSoC4/BLE_1_custom.c **** ***************************************************************************//**
+  71:Generated_Source\PSoC4/BLE_1_custom.c **** * 
+  72:Generated_Source\PSoC4/BLE_1_custom.c **** *  This function initializes Custom Service.
+  73:Generated_Source\PSoC4/BLE_1_custom.c **** * 
+  74:Generated_Source\PSoC4/BLE_1_custom.c **** * \return
+  75:Generated_Source\PSoC4/BLE_1_custom.c **** *  None
+  76:Generated_Source\PSoC4/BLE_1_custom.c **** * 
+  77:Generated_Source\PSoC4/BLE_1_custom.c **** ******************************************************************************/
+  78:Generated_Source\PSoC4/BLE_1_custom.c **** void CyBle_CustomInit(void)
+  79:Generated_Source\PSoC4/BLE_1_custom.c **** {
+  28              		.loc 1 79 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  80:Generated_Source\PSoC4/BLE_1_custom.c ****     
+  81:Generated_Source\PSoC4/BLE_1_custom.c **** #ifdef CYBLE_CUSTOM_CLIENT
+  82:Generated_Source\PSoC4/BLE_1_custom.c **** 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 3
+
+
+  83:Generated_Source\PSoC4/BLE_1_custom.c ****     uint16 locServIndex;
+  84:Generated_Source\PSoC4/BLE_1_custom.c ****     uint16 locCharIndex;
+  85:Generated_Source\PSoC4/BLE_1_custom.c ****     uint16 locDescIndex;
+  86:Generated_Source\PSoC4/BLE_1_custom.c ****     
+  87:Generated_Source\PSoC4/BLE_1_custom.c ****     for(locServIndex = 0u; locServIndex < CYBLE_CUSTOMC_SERVICE_COUNT; locServIndex++)
+  88:Generated_Source\PSoC4/BLE_1_custom.c ****     {
+  89:Generated_Source\PSoC4/BLE_1_custom.c ****         if(cyBle_serverInfo[CYBLE_SRVI_CUSTOMS + locServIndex].range.startHandle == CYBLE_GATT_INVA
+  90:Generated_Source\PSoC4/BLE_1_custom.c ****         {
+  91:Generated_Source\PSoC4/BLE_1_custom.c ****             for(locCharIndex = 0u; locCharIndex < cyBle_customCServ[locServIndex].charCount; locCha
+  92:Generated_Source\PSoC4/BLE_1_custom.c ****             {
+  93:Generated_Source\PSoC4/BLE_1_custom.c ****                 cyBle_customCServ[locServIndex].customServChar[locCharIndex].
+  94:Generated_Source\PSoC4/BLE_1_custom.c ****                     customServCharHandle = 0u;
+  95:Generated_Source\PSoC4/BLE_1_custom.c ****                 
+  96:Generated_Source\PSoC4/BLE_1_custom.c ****                 for(locDescIndex = 0u; locDescIndex < 
+  97:Generated_Source\PSoC4/BLE_1_custom.c ****                     cyBle_customCServ[locServIndex].customServChar[locCharIndex].descCount; 
+  98:Generated_Source\PSoC4/BLE_1_custom.c ****                         locDescIndex++)
+  99:Generated_Source\PSoC4/BLE_1_custom.c ****                 {
+ 100:Generated_Source\PSoC4/BLE_1_custom.c ****                     cyBle_customCServ[locServIndex].customServChar[locCharIndex].
+ 101:Generated_Source\PSoC4/BLE_1_custom.c ****                         customServCharDesc[locDescIndex].descHandle = 0u;
+ 102:Generated_Source\PSoC4/BLE_1_custom.c ****                 }
+ 103:Generated_Source\PSoC4/BLE_1_custom.c ****             }
+ 104:Generated_Source\PSoC4/BLE_1_custom.c ****         }
+ 105:Generated_Source\PSoC4/BLE_1_custom.c ****     }
+ 106:Generated_Source\PSoC4/BLE_1_custom.c **** 
+ 107:Generated_Source\PSoC4/BLE_1_custom.c **** #endif /* (CYBLE_CUSTOM_CLIENT) */
+ 108:Generated_Source\PSoC4/BLE_1_custom.c **** }
+  33              		.loc 1 108 0
+  34              		@ sp needed
+  35 0000 7047     		bx	lr
+  36              		.cfi_endproc
+  37              	.LFE2:
+  38              		.size	CyBle_CustomInit, .-CyBle_CustomInit
+  39              		.global	cyBle_customs
+  40 0002 C046     		.section	.rodata
+  41              		.align	2
+  42              		.type	cyBle_customs, %object
+  43              		.size	cyBle_customs, 10
+  44              	cyBle_customs:
+  45 0000 1000     		.short	16
+  46 0002 1200     		.short	18
+  47 0004 1300     		.short	19
+  48 0006 1500     		.short	21
+  49 0008 1600     		.short	22
+  50              		.text
+  51              	.Letext0:
+  52              		.file 2 "Generated_Source\\PSoC4\\cytypes.h"
+  53              		.file 3 "Generated_Source\\PSoC4\\BLE_1_StackGatt.h"
+  54              		.file 4 "Generated_Source\\PSoC4\\BLE_1_custom.h"
+  55              		.file 5 "Generated_Source\\PSoC4\\BLE_1_Stack.h"
+  56              		.section	.debug_info,"",%progbits
+  57              	.Ldebug_info0:
+  58 0000 15030000 		.4byte	0x315
+  59 0004 0400     		.2byte	0x4
+  60 0006 00000000 		.4byte	.Ldebug_abbrev0
+  61 000a 04       		.byte	0x4
+  62 000b 01       		.uleb128 0x1
+  63 000c 02020000 		.4byte	.LASF94
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 4
+
+
+  64 0010 0C       		.byte	0xc
+  65 0011 FA020000 		.4byte	.LASF95
+  66 0015 93000000 		.4byte	.LASF96
+  67 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  68 001d 00000000 		.4byte	0
+  69 0021 00000000 		.4byte	.Ldebug_line0
+  70 0025 02       		.uleb128 0x2
+  71 0026 01       		.byte	0x1
+  72 0027 06       		.byte	0x6
+  73 0028 C8050000 		.4byte	.LASF0
+  74 002c 02       		.uleb128 0x2
+  75 002d 01       		.byte	0x1
+  76 002e 08       		.byte	0x8
+  77 002f 4F050000 		.4byte	.LASF1
+  78 0033 02       		.uleb128 0x2
+  79 0034 02       		.byte	0x2
+  80 0035 05       		.byte	0x5
+  81 0036 EB000000 		.4byte	.LASF2
+  82 003a 02       		.uleb128 0x2
+  83 003b 02       		.byte	0x2
+  84 003c 07       		.byte	0x7
+  85 003d A8070000 		.4byte	.LASF3
+  86 0041 02       		.uleb128 0x2
+  87 0042 04       		.byte	0x4
+  88 0043 05       		.byte	0x5
+  89 0044 F7030000 		.4byte	.LASF4
+  90 0048 02       		.uleb128 0x2
+  91 0049 04       		.byte	0x4
+  92 004a 07       		.byte	0x7
+  93 004b 59060000 		.4byte	.LASF5
+  94 004f 02       		.uleb128 0x2
+  95 0050 08       		.byte	0x8
+  96 0051 05       		.byte	0x5
+  97 0052 57010000 		.4byte	.LASF6
+  98 0056 02       		.uleb128 0x2
+  99 0057 08       		.byte	0x8
+ 100 0058 07       		.byte	0x7
+ 101 0059 AA030000 		.4byte	.LASF7
+ 102 005d 03       		.uleb128 0x3
+ 103 005e 04       		.byte	0x4
+ 104 005f 05       		.byte	0x5
+ 105 0060 696E7400 		.ascii	"int\000"
+ 106 0064 02       		.uleb128 0x2
+ 107 0065 04       		.byte	0x4
+ 108 0066 07       		.byte	0x7
+ 109 0067 31060000 		.4byte	.LASF8
+ 110 006b 04       		.uleb128 0x4
+ 111 006c DF070000 		.4byte	.LASF86
+ 112 0070 02       		.byte	0x2
+ 113 0071 BA01     		.2byte	0x1ba
+ 114 0073 3A000000 		.4byte	0x3a
+ 115 0077 02       		.uleb128 0x2
+ 116 0078 04       		.byte	0x4
+ 117 0079 04       		.byte	0x4
+ 118 007a 41030000 		.4byte	.LASF9
+ 119 007e 02       		.uleb128 0x2
+ 120 007f 08       		.byte	0x8
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 5
+
+
+ 121 0080 04       		.byte	0x4
+ 122 0081 83080000 		.4byte	.LASF10
+ 123 0085 02       		.uleb128 0x2
+ 124 0086 01       		.byte	0x1
+ 125 0087 08       		.byte	0x8
+ 126 0088 87070000 		.4byte	.LASF11
+ 127 008c 02       		.uleb128 0x2
+ 128 008d 08       		.byte	0x8
+ 129 008e 04       		.byte	0x4
+ 130 008f 1D050000 		.4byte	.LASF12
+ 131 0093 02       		.uleb128 0x2
+ 132 0094 04       		.byte	0x4
+ 133 0095 07       		.byte	0x7
+ 134 0096 2D010000 		.4byte	.LASF13
+ 135 009a 05       		.uleb128 0x5
+ 136 009b 01       		.byte	0x1
+ 137 009c 2C000000 		.4byte	0x2c
+ 138 00a0 05       		.byte	0x5
+ 139 00a1 4D01     		.2byte	0x14d
+ 140 00a3 58020000 		.4byte	0x258
+ 141 00a7 06       		.uleb128 0x6
+ 142 00a8 E3020000 		.4byte	.LASF14
+ 143 00ac 00       		.byte	0
+ 144 00ad 06       		.uleb128 0x6
+ 145 00ae 9C010000 		.4byte	.LASF15
+ 146 00b2 01       		.byte	0x1
+ 147 00b3 06       		.uleb128 0x6
+ 148 00b4 030A0000 		.4byte	.LASF16
+ 149 00b8 02       		.byte	0x2
+ 150 00b9 06       		.uleb128 0x6
+ 151 00ba DF080000 		.4byte	.LASF17
+ 152 00be 03       		.byte	0x3
+ 153 00bf 06       		.uleb128 0x6
+ 154 00c0 76010000 		.4byte	.LASF18
+ 155 00c4 04       		.byte	0x4
+ 156 00c5 06       		.uleb128 0x6
+ 157 00c6 89040000 		.4byte	.LASF19
+ 158 00ca 05       		.byte	0x5
+ 159 00cb 06       		.uleb128 0x6
+ 160 00cc 3E000000 		.4byte	.LASF20
+ 161 00d0 06       		.byte	0x6
+ 162 00d1 06       		.uleb128 0x6
+ 163 00d2 BB070000 		.4byte	.LASF21
+ 164 00d6 20       		.byte	0x20
+ 165 00d7 06       		.uleb128 0x6
+ 166 00d8 6B060000 		.4byte	.LASF22
+ 167 00dc 21       		.byte	0x21
+ 168 00dd 06       		.uleb128 0x6
+ 169 00de 00000000 		.4byte	.LASF23
+ 170 00e2 22       		.byte	0x22
+ 171 00e3 06       		.uleb128 0x6
+ 172 00e4 A5040000 		.4byte	.LASF24
+ 173 00e8 23       		.byte	0x23
+ 174 00e9 06       		.uleb128 0x6
+ 175 00ea 15060000 		.4byte	.LASF25
+ 176 00ee 24       		.byte	0x24
+ 177 00ef 06       		.uleb128 0x6
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 6
+
+
+ 178 00f0 F5000000 		.4byte	.LASF26
+ 179 00f4 25       		.byte	0x25
+ 180 00f5 06       		.uleb128 0x6
+ 181 00f6 40040000 		.4byte	.LASF27
+ 182 00fa 26       		.byte	0x26
+ 183 00fb 06       		.uleb128 0x6
+ 184 00fc 21040000 		.4byte	.LASF28
+ 185 0100 27       		.byte	0x27
+ 186 0101 06       		.uleb128 0x6
+ 187 0102 71000000 		.4byte	.LASF29
+ 188 0106 28       		.byte	0x28
+ 189 0107 06       		.uleb128 0x6
+ 190 0108 A3060000 		.4byte	.LASF30
+ 191 010c 29       		.byte	0x29
+ 192 010d 06       		.uleb128 0x6
+ 193 010e 37070000 		.4byte	.LASF31
+ 194 0112 2A       		.byte	0x2a
+ 195 0113 06       		.uleb128 0x6
+ 196 0114 23080000 		.4byte	.LASF32
+ 197 0118 2B       		.byte	0x2b
+ 198 0119 06       		.uleb128 0x6
+ 199 011a FB060000 		.4byte	.LASF33
+ 200 011e 2C       		.byte	0x2c
+ 201 011f 06       		.uleb128 0x6
+ 202 0120 60030000 		.4byte	.LASF34
+ 203 0124 2D       		.byte	0x2d
+ 204 0125 06       		.uleb128 0x6
+ 205 0126 C7000000 		.4byte	.LASF35
+ 206 012a 2E       		.byte	0x2e
+ 207 012b 06       		.uleb128 0x6
+ 208 012c ED0A0000 		.4byte	.LASF36
+ 209 0130 2F       		.byte	0x2f
+ 210 0131 06       		.uleb128 0x6
+ 211 0132 36010000 		.4byte	.LASF37
+ 212 0136 30       		.byte	0x30
+ 213 0137 06       		.uleb128 0x6
+ 214 0138 F9040000 		.4byte	.LASF38
+ 215 013c 31       		.byte	0x31
+ 216 013d 06       		.uleb128 0x6
+ 217 013e 89030000 		.4byte	.LASF39
+ 218 0142 32       		.byte	0x32
+ 219 0143 06       		.uleb128 0x6
+ 220 0144 60070000 		.4byte	.LASF40
+ 221 0148 33       		.byte	0x33
+ 222 0149 06       		.uleb128 0x6
+ 223 014a C0060000 		.4byte	.LASF41
+ 224 014e 34       		.byte	0x34
+ 225 014f 06       		.uleb128 0x6
+ 226 0150 C2080000 		.4byte	.LASF42
+ 227 0154 35       		.byte	0x35
+ 228 0155 06       		.uleb128 0x6
+ 229 0156 D6030000 		.4byte	.LASF43
+ 230 015a 36       		.byte	0x36
+ 231 015b 06       		.uleb128 0x6
+ 232 015c AF010000 		.4byte	.LASF44
+ 233 0160 37       		.byte	0x37
+ 234 0161 06       		.uleb128 0x6
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 7
+
+
+ 235 0162 57000000 		.4byte	.LASF45
+ 236 0166 40       		.byte	0x40
+ 237 0167 06       		.uleb128 0x6
+ 238 0168 3E060000 		.4byte	.LASF46
+ 239 016c 41       		.byte	0x41
+ 240 016d 06       		.uleb128 0x6
+ 241 016e 0F010000 		.4byte	.LASF47
+ 242 0172 42       		.byte	0x42
+ 243 0173 06       		.uleb128 0x6
+ 244 0174 E4010000 		.4byte	.LASF48
+ 245 0178 43       		.byte	0x43
+ 246 0179 06       		.uleb128 0x6
+ 247 017a C1090000 		.4byte	.LASF49
+ 248 017e 44       		.byte	0x44
+ 249 017f 06       		.uleb128 0x6
+ 250 0180 5B090000 		.4byte	.LASF50
+ 251 0184 45       		.byte	0x45
+ 252 0185 06       		.uleb128 0x6
+ 253 0186 A0090000 		.4byte	.LASF51
+ 254 018a 46       		.byte	0x46
+ 255 018b 06       		.uleb128 0x6
+ 256 018c AA050000 		.4byte	.LASF52
+ 257 0190 47       		.byte	0x47
+ 258 0191 06       		.uleb128 0x6
+ 259 0192 EE050000 		.4byte	.LASF53
+ 260 0196 48       		.byte	0x48
+ 261 0197 06       		.uleb128 0x6
+ 262 0198 47030000 		.4byte	.LASF54
+ 263 019c 49       		.byte	0x49
+ 264 019d 06       		.uleb128 0x6
+ 265 019e E6070000 		.4byte	.LASF55
+ 266 01a2 4A       		.byte	0x4a
+ 267 01a3 06       		.uleb128 0x6
+ 268 01a4 A3020000 		.4byte	.LASF56
+ 269 01a8 4B       		.byte	0x4b
+ 270 01a9 06       		.uleb128 0x6
+ 271 01aa D4050000 		.4byte	.LASF57
+ 272 01ae 4C       		.byte	0x4c
+ 273 01af 06       		.uleb128 0x6
+ 274 01b0 24000000 		.4byte	.LASF58
+ 275 01b4 4D       		.byte	0x4d
+ 276 01b5 06       		.uleb128 0x6
+ 277 01b6 82090000 		.4byte	.LASF59
+ 278 01ba 4E       		.byte	0x4e
+ 279 01bb 06       		.uleb128 0x6
+ 280 01bc 6C050000 		.4byte	.LASF60
+ 281 01c0 4F       		.byte	0x4f
+ 282 01c1 06       		.uleb128 0x6
+ 283 01c2 6E0A0000 		.4byte	.LASF61
+ 284 01c6 50       		.byte	0x50
+ 285 01c7 06       		.uleb128 0x6
+ 286 01c8 04080000 		.4byte	.LASF62
+ 287 01cc 51       		.byte	0x51
+ 288 01cd 06       		.uleb128 0x6
+ 289 01ce 68040000 		.4byte	.LASF63
+ 290 01d2 52       		.byte	0x52
+ 291 01d3 06       		.uleb128 0x6
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 8
+
+
+ 292 01d4 00040000 		.4byte	.LASF64
+ 293 01d8 53       		.byte	0x53
+ 294 01d9 06       		.uleb128 0x6
+ 295 01da C2020000 		.4byte	.LASF65
+ 296 01de 54       		.byte	0x54
+ 297 01df 06       		.uleb128 0x6
+ 298 01e0 B70A0000 		.4byte	.LASF66
+ 299 01e4 55       		.byte	0x55
+ 300 01e5 06       		.uleb128 0x6
+ 301 01e6 4C0A0000 		.4byte	.LASF67
+ 302 01ea 56       		.byte	0x56
+ 303 01eb 06       		.uleb128 0x6
+ 304 01ec 230A0000 		.4byte	.LASF68
+ 305 01f0 57       		.byte	0x57
+ 306 01f1 06       		.uleb128 0x6
+ 307 01f2 D8060000 		.4byte	.LASF69
+ 308 01f6 58       		.byte	0x58
+ 309 01f7 06       		.uleb128 0x6
+ 310 01f8 29050000 		.4byte	.LASF70
+ 311 01fc 70       		.byte	0x70
+ 312 01fd 06       		.uleb128 0x6
+ 313 01fe 17090000 		.4byte	.LASF71
+ 314 0202 71       		.byte	0x71
+ 315 0203 06       		.uleb128 0x6
+ 316 0204 8C070000 		.4byte	.LASF72
+ 317 0208 72       		.byte	0x72
+ 318 0209 06       		.uleb128 0x6
+ 319 020a 3D090000 		.4byte	.LASF73
+ 320 020e 73       		.byte	0x73
+ 321 020f 06       		.uleb128 0x6
+ 322 0210 DB040000 		.4byte	.LASF74
+ 323 0214 74       		.byte	0x74
+ 324 0215 06       		.uleb128 0x6
+ 325 0216 82060000 		.4byte	.LASF75
+ 326 021a 75       		.byte	0x75
+ 327 021b 06       		.uleb128 0x6
+ 328 021c 20030000 		.4byte	.LASF76
+ 329 0220 76       		.byte	0x76
+ 330 0221 06       		.uleb128 0x6
+ 331 0222 F8080000 		.4byte	.LASF77
+ 332 0226 77       		.byte	0x77
+ 333 0227 06       		.uleb128 0x6
+ 334 0228 60080000 		.4byte	.LASF78
+ 335 022c 78       		.byte	0x78
+ 336 022d 06       		.uleb128 0x6
+ 337 022e 8A080000 		.4byte	.LASF79
+ 338 0232 79       		.byte	0x79
+ 339 0233 06       		.uleb128 0x6
+ 340 0234 DF090000 		.4byte	.LASF80
+ 341 0238 7A       		.byte	0x7a
+ 342 0239 06       		.uleb128 0x6
+ 343 023a 42080000 		.4byte	.LASF81
+ 344 023e FA       		.byte	0xfa
+ 345 023f 06       		.uleb128 0x6
+ 346 0240 8B050000 		.4byte	.LASF82
+ 347 0244 FB       		.byte	0xfb
+ 348 0245 06       		.uleb128 0x6
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 9
+
+
+ 349 0246 DB0A0000 		.4byte	.LASF83
+ 350 024a FC       		.byte	0xfc
+ 351 024b 06       		.uleb128 0x6
+ 352 024c 1F070000 		.4byte	.LASF84
+ 353 0250 FD       		.byte	0xfd
+ 354 0251 06       		.uleb128 0x6
+ 355 0252 150A0000 		.4byte	.LASF85
+ 356 0256 FF       		.byte	0xff
+ 357 0257 00       		.byte	0
+ 358 0258 04       		.uleb128 0x4
+ 359 0259 8D0A0000 		.4byte	.LASF87
+ 360 025d 03       		.byte	0x3
+ 361 025e 8901     		.2byte	0x189
+ 362 0260 6B000000 		.4byte	0x6b
+ 363 0264 07       		.uleb128 0x7
+ 364 0265 04       		.byte	0x4
+ 365 0266 04       		.byte	0x4
+ 366 0267 46       		.byte	0x46
+ 367 0268 85020000 		.4byte	0x285
+ 368 026c 08       		.uleb128 0x8
+ 369 026d AD080000 		.4byte	.LASF88
+ 370 0271 04       		.byte	0x4
+ 371 0272 49       		.byte	0x49
+ 372 0273 58020000 		.4byte	0x258
+ 373 0277 00       		.byte	0
+ 374 0278 08       		.uleb128 0x8
+ 375 0279 90020000 		.4byte	.LASF89
+ 376 027d 04       		.byte	0x4
+ 377 027e 4B       		.byte	0x4b
+ 378 027f 85020000 		.4byte	0x285
+ 379 0283 02       		.byte	0x2
+ 380 0284 00       		.byte	0
+ 381 0285 09       		.uleb128 0x9
+ 382 0286 58020000 		.4byte	0x258
+ 383 028a 95020000 		.4byte	0x295
+ 384 028e 0A       		.uleb128 0xa
+ 385 028f 93000000 		.4byte	0x93
+ 386 0293 00       		.byte	0
+ 387 0294 00       		.byte	0
+ 388 0295 0B       		.uleb128 0xb
+ 389 0296 C1030000 		.4byte	.LASF90
+ 390 029a 04       		.byte	0x4
+ 391 029b 4D       		.byte	0x4d
+ 392 029c 64020000 		.4byte	0x264
+ 393 02a0 07       		.uleb128 0x7
+ 394 02a1 0A       		.byte	0xa
+ 395 02a2 04       		.byte	0x4
+ 396 02a3 50       		.byte	0x50
+ 397 02a4 C1020000 		.4byte	0x2c1
+ 398 02a8 08       		.uleb128 0x8
+ 399 02a9 65010000 		.4byte	.LASF91
+ 400 02ad 04       		.byte	0x4
+ 401 02ae 53       		.byte	0x53
+ 402 02af 58020000 		.4byte	0x258
+ 403 02b3 00       		.byte	0
+ 404 02b4 08       		.uleb128 0x8
+ 405 02b5 5D050000 		.4byte	.LASF92
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 10
+
+
+ 406 02b9 04       		.byte	0x4
+ 407 02ba 56       		.byte	0x56
+ 408 02bb C1020000 		.4byte	0x2c1
+ 409 02bf 02       		.byte	0x2
+ 410 02c0 00       		.byte	0
+ 411 02c1 09       		.uleb128 0x9
+ 412 02c2 95020000 		.4byte	0x295
+ 413 02c6 D1020000 		.4byte	0x2d1
+ 414 02ca 0A       		.uleb128 0xa
+ 415 02cb 93000000 		.4byte	0x93
+ 416 02cf 01       		.byte	0x1
+ 417 02d0 00       		.byte	0
+ 418 02d1 0B       		.uleb128 0xb
+ 419 02d2 CB040000 		.4byte	.LASF93
+ 420 02d6 04       		.byte	0x4
+ 421 02d7 58       		.byte	0x58
+ 422 02d8 A0020000 		.4byte	0x2a0
+ 423 02dc 0C       		.uleb128 0xc
+ 424 02dd 8B010000 		.4byte	.LASF97
+ 425 02e1 01       		.byte	0x1
+ 426 02e2 4E       		.byte	0x4e
+ 427 02e3 00000000 		.4byte	.LFB2
+ 428 02e7 02000000 		.4byte	.LFE2-.LFB2
+ 429 02eb 01       		.uleb128 0x1
+ 430 02ec 9C       		.byte	0x9c
+ 431 02ed 09       		.uleb128 0x9
+ 432 02ee FD020000 		.4byte	0x2fd
+ 433 02f2 FD020000 		.4byte	0x2fd
+ 434 02f6 0A       		.uleb128 0xa
+ 435 02f7 93000000 		.4byte	0x93
+ 436 02fb 00       		.byte	0
+ 437 02fc 00       		.byte	0
+ 438 02fd 0D       		.uleb128 0xd
+ 439 02fe D1020000 		.4byte	0x2d1
+ 440 0302 0E       		.uleb128 0xe
+ 441 0303 A90A0000 		.4byte	.LASF98
+ 442 0307 01       		.byte	0x1
+ 443 0308 1A       		.byte	0x1a
+ 444 0309 13030000 		.4byte	0x313
+ 445 030d 05       		.uleb128 0x5
+ 446 030e 03       		.byte	0x3
+ 447 030f 00000000 		.4byte	cyBle_customs
+ 448 0313 0D       		.uleb128 0xd
+ 449 0314 ED020000 		.4byte	0x2ed
+ 450 0318 00       		.byte	0
+ 451              		.section	.debug_abbrev,"",%progbits
+ 452              	.Ldebug_abbrev0:
+ 453 0000 01       		.uleb128 0x1
+ 454 0001 11       		.uleb128 0x11
+ 455 0002 01       		.byte	0x1
+ 456 0003 25       		.uleb128 0x25
+ 457 0004 0E       		.uleb128 0xe
+ 458 0005 13       		.uleb128 0x13
+ 459 0006 0B       		.uleb128 0xb
+ 460 0007 03       		.uleb128 0x3
+ 461 0008 0E       		.uleb128 0xe
+ 462 0009 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 11
+
+
+ 463 000a 0E       		.uleb128 0xe
+ 464 000b 55       		.uleb128 0x55
+ 465 000c 17       		.uleb128 0x17
+ 466 000d 11       		.uleb128 0x11
+ 467 000e 01       		.uleb128 0x1
+ 468 000f 10       		.uleb128 0x10
+ 469 0010 17       		.uleb128 0x17
+ 470 0011 00       		.byte	0
+ 471 0012 00       		.byte	0
+ 472 0013 02       		.uleb128 0x2
+ 473 0014 24       		.uleb128 0x24
+ 474 0015 00       		.byte	0
+ 475 0016 0B       		.uleb128 0xb
+ 476 0017 0B       		.uleb128 0xb
+ 477 0018 3E       		.uleb128 0x3e
+ 478 0019 0B       		.uleb128 0xb
+ 479 001a 03       		.uleb128 0x3
+ 480 001b 0E       		.uleb128 0xe
+ 481 001c 00       		.byte	0
+ 482 001d 00       		.byte	0
+ 483 001e 03       		.uleb128 0x3
+ 484 001f 24       		.uleb128 0x24
+ 485 0020 00       		.byte	0
+ 486 0021 0B       		.uleb128 0xb
+ 487 0022 0B       		.uleb128 0xb
+ 488 0023 3E       		.uleb128 0x3e
+ 489 0024 0B       		.uleb128 0xb
+ 490 0025 03       		.uleb128 0x3
+ 491 0026 08       		.uleb128 0x8
+ 492 0027 00       		.byte	0
+ 493 0028 00       		.byte	0
+ 494 0029 04       		.uleb128 0x4
+ 495 002a 16       		.uleb128 0x16
+ 496 002b 00       		.byte	0
+ 497 002c 03       		.uleb128 0x3
+ 498 002d 0E       		.uleb128 0xe
+ 499 002e 3A       		.uleb128 0x3a
+ 500 002f 0B       		.uleb128 0xb
+ 501 0030 3B       		.uleb128 0x3b
+ 502 0031 05       		.uleb128 0x5
+ 503 0032 49       		.uleb128 0x49
+ 504 0033 13       		.uleb128 0x13
+ 505 0034 00       		.byte	0
+ 506 0035 00       		.byte	0
+ 507 0036 05       		.uleb128 0x5
+ 508 0037 04       		.uleb128 0x4
+ 509 0038 01       		.byte	0x1
+ 510 0039 0B       		.uleb128 0xb
+ 511 003a 0B       		.uleb128 0xb
+ 512 003b 49       		.uleb128 0x49
+ 513 003c 13       		.uleb128 0x13
+ 514 003d 3A       		.uleb128 0x3a
+ 515 003e 0B       		.uleb128 0xb
+ 516 003f 3B       		.uleb128 0x3b
+ 517 0040 05       		.uleb128 0x5
+ 518 0041 01       		.uleb128 0x1
+ 519 0042 13       		.uleb128 0x13
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 12
+
+
+ 520 0043 00       		.byte	0
+ 521 0044 00       		.byte	0
+ 522 0045 06       		.uleb128 0x6
+ 523 0046 28       		.uleb128 0x28
+ 524 0047 00       		.byte	0
+ 525 0048 03       		.uleb128 0x3
+ 526 0049 0E       		.uleb128 0xe
+ 527 004a 1C       		.uleb128 0x1c
+ 528 004b 0B       		.uleb128 0xb
+ 529 004c 00       		.byte	0
+ 530 004d 00       		.byte	0
+ 531 004e 07       		.uleb128 0x7
+ 532 004f 13       		.uleb128 0x13
+ 533 0050 01       		.byte	0x1
+ 534 0051 0B       		.uleb128 0xb
+ 535 0052 0B       		.uleb128 0xb
+ 536 0053 3A       		.uleb128 0x3a
+ 537 0054 0B       		.uleb128 0xb
+ 538 0055 3B       		.uleb128 0x3b
+ 539 0056 0B       		.uleb128 0xb
+ 540 0057 01       		.uleb128 0x1
+ 541 0058 13       		.uleb128 0x13
+ 542 0059 00       		.byte	0
+ 543 005a 00       		.byte	0
+ 544 005b 08       		.uleb128 0x8
+ 545 005c 0D       		.uleb128 0xd
+ 546 005d 00       		.byte	0
+ 547 005e 03       		.uleb128 0x3
+ 548 005f 0E       		.uleb128 0xe
+ 549 0060 3A       		.uleb128 0x3a
+ 550 0061 0B       		.uleb128 0xb
+ 551 0062 3B       		.uleb128 0x3b
+ 552 0063 0B       		.uleb128 0xb
+ 553 0064 49       		.uleb128 0x49
+ 554 0065 13       		.uleb128 0x13
+ 555 0066 38       		.uleb128 0x38
+ 556 0067 0B       		.uleb128 0xb
+ 557 0068 00       		.byte	0
+ 558 0069 00       		.byte	0
+ 559 006a 09       		.uleb128 0x9
+ 560 006b 01       		.uleb128 0x1
+ 561 006c 01       		.byte	0x1
+ 562 006d 49       		.uleb128 0x49
+ 563 006e 13       		.uleb128 0x13
+ 564 006f 01       		.uleb128 0x1
+ 565 0070 13       		.uleb128 0x13
+ 566 0071 00       		.byte	0
+ 567 0072 00       		.byte	0
+ 568 0073 0A       		.uleb128 0xa
+ 569 0074 21       		.uleb128 0x21
+ 570 0075 00       		.byte	0
+ 571 0076 49       		.uleb128 0x49
+ 572 0077 13       		.uleb128 0x13
+ 573 0078 2F       		.uleb128 0x2f
+ 574 0079 0B       		.uleb128 0xb
+ 575 007a 00       		.byte	0
+ 576 007b 00       		.byte	0
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 13
+
+
+ 577 007c 0B       		.uleb128 0xb
+ 578 007d 16       		.uleb128 0x16
+ 579 007e 00       		.byte	0
+ 580 007f 03       		.uleb128 0x3
+ 581 0080 0E       		.uleb128 0xe
+ 582 0081 3A       		.uleb128 0x3a
+ 583 0082 0B       		.uleb128 0xb
+ 584 0083 3B       		.uleb128 0x3b
+ 585 0084 0B       		.uleb128 0xb
+ 586 0085 49       		.uleb128 0x49
+ 587 0086 13       		.uleb128 0x13
+ 588 0087 00       		.byte	0
+ 589 0088 00       		.byte	0
+ 590 0089 0C       		.uleb128 0xc
+ 591 008a 2E       		.uleb128 0x2e
+ 592 008b 00       		.byte	0
+ 593 008c 3F       		.uleb128 0x3f
+ 594 008d 19       		.uleb128 0x19
+ 595 008e 03       		.uleb128 0x3
+ 596 008f 0E       		.uleb128 0xe
+ 597 0090 3A       		.uleb128 0x3a
+ 598 0091 0B       		.uleb128 0xb
+ 599 0092 3B       		.uleb128 0x3b
+ 600 0093 0B       		.uleb128 0xb
+ 601 0094 27       		.uleb128 0x27
+ 602 0095 19       		.uleb128 0x19
+ 603 0096 11       		.uleb128 0x11
+ 604 0097 01       		.uleb128 0x1
+ 605 0098 12       		.uleb128 0x12
+ 606 0099 06       		.uleb128 0x6
+ 607 009a 40       		.uleb128 0x40
+ 608 009b 18       		.uleb128 0x18
+ 609 009c 9742     		.uleb128 0x2117
+ 610 009e 19       		.uleb128 0x19
+ 611 009f 00       		.byte	0
+ 612 00a0 00       		.byte	0
+ 613 00a1 0D       		.uleb128 0xd
+ 614 00a2 26       		.uleb128 0x26
+ 615 00a3 00       		.byte	0
+ 616 00a4 49       		.uleb128 0x49
+ 617 00a5 13       		.uleb128 0x13
+ 618 00a6 00       		.byte	0
+ 619 00a7 00       		.byte	0
+ 620 00a8 0E       		.uleb128 0xe
+ 621 00a9 34       		.uleb128 0x34
+ 622 00aa 00       		.byte	0
+ 623 00ab 03       		.uleb128 0x3
+ 624 00ac 0E       		.uleb128 0xe
+ 625 00ad 3A       		.uleb128 0x3a
+ 626 00ae 0B       		.uleb128 0xb
+ 627 00af 3B       		.uleb128 0x3b
+ 628 00b0 0B       		.uleb128 0xb
+ 629 00b1 49       		.uleb128 0x49
+ 630 00b2 13       		.uleb128 0x13
+ 631 00b3 3F       		.uleb128 0x3f
+ 632 00b4 19       		.uleb128 0x19
+ 633 00b5 02       		.uleb128 0x2
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 14
+
+
+ 634 00b6 18       		.uleb128 0x18
+ 635 00b7 00       		.byte	0
+ 636 00b8 00       		.byte	0
+ 637 00b9 00       		.byte	0
+ 638              		.section	.debug_aranges,"",%progbits
+ 639 0000 1C000000 		.4byte	0x1c
+ 640 0004 0200     		.2byte	0x2
+ 641 0006 00000000 		.4byte	.Ldebug_info0
+ 642 000a 04       		.byte	0x4
+ 643 000b 00       		.byte	0
+ 644 000c 0000     		.2byte	0
+ 645 000e 0000     		.2byte	0
+ 646 0010 00000000 		.4byte	.LFB2
+ 647 0014 02000000 		.4byte	.LFE2-.LFB2
+ 648 0018 00000000 		.4byte	0
+ 649 001c 00000000 		.4byte	0
+ 650              		.section	.debug_ranges,"",%progbits
+ 651              	.Ldebug_ranges0:
+ 652 0000 00000000 		.4byte	.LFB2
+ 653 0004 02000000 		.4byte	.LFE2
+ 654 0008 00000000 		.4byte	0
+ 655 000c 00000000 		.4byte	0
+ 656              		.section	.debug_line,"",%progbits
+ 657              	.Ldebug_line0:
+ 658 0000 9A000000 		.section	.debug_str,"MS",%progbits,1
+ 658      02008100 
+ 658      00000201 
+ 658      FB0E0D00 
+ 658      01010101 
+ 659              	.LASF23:
+ 660 0000 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ 660      455F4556 
+ 660      545F4741 
+ 660      505F5041 
+ 660      53534B45 
+ 661              	.LASF58:
+ 662 0024 4359424C 		.ascii	"CYBLE_EVT_GATTC_WRITE_RSP\000"
+ 662      455F4556 
+ 662      545F4741 
+ 662      5454435F 
+ 662      57524954 
+ 663              	.LASF20:
+ 664 003e 4359424C 		.ascii	"CYBLE_EVT_MEMORY_REQUEST\000"
+ 664      455F4556 
+ 664      545F4D45 
+ 664      4D4F5259 
+ 664      5F524551 
+ 665              	.LASF45:
+ 666 0057 4359424C 		.ascii	"CYBLE_EVT_GATTC_ERROR_RSP\000"
+ 666      455F4556 
+ 666      545F4741 
+ 666      5454435F 
+ 666      4552524F 
+ 667              	.LASF29:
+ 668 0071 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 668      455F4556 
+ 668      545F4741 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 15
+
+
+ 668      505F4445 
+ 668      56494345 
+ 669              	.LASF96:
+ 670 0093 453A5C47 		.ascii	"E:\\GitHub\\SmartBox\\firmware\\SmartBox\\SmartBox."
+ 670      69744875 
+ 670      625C536D 
+ 670      61727442 
+ 670      6F785C66 
+ 671 00c1 63796473 		.ascii	"cydsn\000"
+ 671      6E00
+ 672              	.LASF35:
+ 673 00c7 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
+ 673      455F4556 
+ 673      545F4741 
+ 673      505F4B45 
+ 673      59505245 
+ 674              	.LASF2:
+ 675 00eb 73686F72 		.ascii	"short int\000"
+ 675      7420696E 
+ 675      7400
+ 676              	.LASF26:
+ 677 00f5 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_FAILED\000"
+ 677      455F4556 
+ 677      545F4741 
+ 677      505F4155 
+ 677      54485F46 
+ 678              	.LASF47:
+ 679 010f 4359424C 		.ascii	"CYBLE_EVT_GATT_DISCONNECT_IND\000"
+ 679      455F4556 
+ 679      545F4741 
+ 679      54545F44 
+ 679      4953434F 
+ 680              	.LASF13:
+ 681 012d 73697A65 		.ascii	"sizetype\000"
+ 681      74797065 
+ 681      00
+ 682              	.LASF37:
+ 683 0136 4359424C 		.ascii	"CYBLE_EVT_GAP_DATA_LENGTH_CHANGE\000"
+ 683      455F4556 
+ 683      545F4741 
+ 683      505F4441 
+ 683      54415F4C 
+ 684              	.LASF6:
+ 685 0157 6C6F6E67 		.ascii	"long long int\000"
+ 685      206C6F6E 
+ 685      6720696E 
+ 685      7400
+ 686              	.LASF91:
+ 687 0165 63757374 		.ascii	"customServHandle\000"
+ 687      6F6D5365 
+ 687      72764861 
+ 687      6E646C65 
+ 687      00
+ 688              	.LASF18:
+ 689 0176 4359424C 		.ascii	"CYBLE_EVT_HCI_STATUS\000"
+ 689      455F4556 
+ 689      545F4843 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 16
+
+
+ 689      495F5354 
+ 689      41545553 
+ 690              	.LASF97:
+ 691 018b 4379426C 		.ascii	"CyBle_CustomInit\000"
+ 691      655F4375 
+ 691      73746F6D 
+ 691      496E6974 
+ 691      00
+ 692              	.LASF15:
+ 693 019c 4359424C 		.ascii	"CYBLE_EVT_STACK_ON\000"
+ 693      455F4556 
+ 693      545F5354 
+ 693      41434B5F 
+ 693      4F4E00
+ 694              	.LASF44:
+ 695 01af 4359424C 		.ascii	"CYBLE_EVT_GAP_SMP_LOC_P256_KEYS_GEN_AND_SET_COMPLET"
+ 695      455F4556 
+ 695      545F4741 
+ 695      505F534D 
+ 695      505F4C4F 
+ 696 01e2 4500     		.ascii	"E\000"
+ 697              	.LASF48:
+ 698 01e4 4359424C 		.ascii	"CYBLE_EVT_GATTS_XCNHG_MTU_REQ\000"
+ 698      455F4556 
+ 698      545F4741 
+ 698      5454535F 
+ 698      58434E48 
+ 699              	.LASF94:
+ 700 0202 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 700      43313120 
+ 700      352E342E 
+ 700      31203230 
+ 700      31363036 
+ 701 0235 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0 -mthumb -g -O"
+ 701      20726576 
+ 701      6973696F 
+ 701      6E203233 
+ 701      37373135 
+ 702 0268 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 702      66756E63 
+ 702      74696F6E 
+ 702      2D736563 
+ 702      74696F6E 
+ 703              	.LASF89:
+ 704 0290 63757374 		.ascii	"customServCharDesc\000"
+ 704      6F6D5365 
+ 704      72764368 
+ 704      61724465 
+ 704      736300
+ 705              	.LASF56:
+ 706 02a3 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_MULTI_RSP\000"
+ 706      455F4556 
+ 706      545F4741 
+ 706      5454435F 
+ 706      52454144 
+ 707              	.LASF65:
+ 708 02c2 4359424C 		.ascii	"CYBLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 17
+
+
+ 708      455F4556 
+ 708      545F4741 
+ 708      5454535F 
+ 708      48414E44 
+ 709              	.LASF14:
+ 710 02e3 4359424C 		.ascii	"CYBLE_EVT_HOST_INVALID\000"
+ 710      455F4556 
+ 710      545F484F 
+ 710      53545F49 
+ 710      4E56414C 
+ 711              	.LASF95:
+ 712 02fa 47656E65 		.ascii	"Generated_Source\\PSoC4\\BLE_1_custom.c\000"
+ 712      72617465 
+ 712      645F536F 
+ 712      75726365 
+ 712      5C50536F 
+ 713              	.LASF76:
+ 714 0320 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
+ 714      455F4556 
+ 714      545F4C32 
+ 714      4341505F 
+ 714      43424643 
+ 715              	.LASF9:
+ 716 0341 666C6F61 		.ascii	"float\000"
+ 716      7400
+ 717              	.LASF54:
+ 718 0347 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_RSP\000"
+ 718      455F4556 
+ 718      545F4741 
+ 718      5454435F 
+ 718      52454144 
+ 719              	.LASF34:
+ 720 0360 4359424C 		.ascii	"CYBLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
+ 720      455F4556 
+ 720      545F4741 
+ 720      505F4E55 
+ 720      4D455249 
+ 721              	.LASF39:
+ 722 0389 4359424C 		.ascii	"CYBLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
+ 722      455F4556 
+ 722      545F4741 
+ 722      50435F44 
+ 722      49524543 
+ 723              	.LASF7:
+ 724 03aa 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 724      206C6F6E 
+ 724      6720756E 
+ 724      7369676E 
+ 724      65642069 
+ 725              	.LASF90:
+ 726 03c1 4359424C 		.ascii	"CYBLE_CUSTOMS_INFO_T\000"
+ 726      455F4355 
+ 726      53544F4D 
+ 726      535F494E 
+ 726      464F5F54 
+ 727              	.LASF43:
+ 728 03d6 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ_REPLY_ERR\000"
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 18
+
+
+ 728      455F4556 
+ 728      545F4741 
+ 728      505F4155 
+ 728      54485F52 
+ 729              	.LASF4:
+ 730 03f7 6C6F6E67 		.ascii	"long int\000"
+ 730      20696E74 
+ 730      00
+ 731              	.LASF64:
+ 732 0400 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 732      455F4556 
+ 732      545F4741 
+ 732      5454435F 
+ 732      48414E44 
+ 733              	.LASF28:
+ 734 0421 4359424C 		.ascii	"CYBLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 734      455F4556 
+ 734      545F4741 
+ 734      505F4445 
+ 734      56494345 
+ 735              	.LASF27:
+ 736 0440 4359424C 		.ascii	"CYBLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
+ 736      455F4556 
+ 736      545F4741 
+ 736      50505F41 
+ 736      44564552 
+ 737              	.LASF63:
+ 738 0468 4359424C 		.ascii	"CYBLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
+ 738      455F4556 
+ 738      545F4741 
+ 738      5454435F 
+ 738      48414E44 
+ 739              	.LASF19:
+ 740 0489 4359424C 		.ascii	"CYBLE_EVT_STACK_BUSY_STATUS\000"
+ 740      455F4556 
+ 740      545F5354 
+ 740      41434B5F 
+ 740      42555359 
+ 741              	.LASF24:
+ 742 04a5 4359424C 		.ascii	"CYBLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
+ 742      455F4556 
+ 742      545F4741 
+ 742      505F5041 
+ 742      53534B45 
+ 743              	.LASF93:
+ 744 04cb 4359424C 		.ascii	"CYBLE_CUSTOMS_T\000"
+ 744      455F4355 
+ 744      53544F4D 
+ 744      535F5400 
+ 745              	.LASF74:
+ 746 04db 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_CNF\000"
+ 746      455F4556 
+ 746      545F4C32 
+ 746      4341505F 
+ 746      43424643 
+ 747              	.LASF38:
+ 748 04f9 4359424C 		.ascii	"CYBLE_EVT_GAP_ENHANCE_CONN_COMPLETE\000"
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 19
+
+
+ 748      455F4556 
+ 748      545F4741 
+ 748      505F454E 
+ 748      48414E43 
+ 749              	.LASF12:
+ 750 051d 6C6F6E67 		.ascii	"long double\000"
+ 750      20646F75 
+ 750      626C6500 
+ 751              	.LASF70:
+ 752 0529 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 752      455F4556 
+ 752      545F4C32 
+ 752      4341505F 
+ 752      434F4E4E 
+ 753              	.LASF1:
+ 754 054f 756E7369 		.ascii	"unsigned char\000"
+ 754      676E6564 
+ 754      20636861 
+ 754      7200
+ 755              	.LASF92:
+ 756 055d 63757374 		.ascii	"customServInfo\000"
+ 756      6F6D5365 
+ 756      7276496E 
+ 756      666F00
+ 757              	.LASF60:
+ 758 056c 4359424C 		.ascii	"CYBLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ 758      455F4556 
+ 758      545F4741 
+ 758      5454535F 
+ 758      50524550 
+ 759              	.LASF82:
+ 760 058b 4359424C 		.ascii	"CYBLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 760      455F4556 
+ 760      545F4C45 
+ 760      5F50494E 
+ 760      475F4155 
+ 761              	.LASF52:
+ 762 05aa 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_INFO_RSP\000"
+ 762      455F4556 
+ 762      545F4741 
+ 762      5454435F 
+ 762      46494E44 
+ 763              	.LASF0:
+ 764 05c8 7369676E 		.ascii	"signed char\000"
+ 764      65642063 
+ 764      68617200 
+ 765              	.LASF57:
+ 766 05d4 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_REQ\000"
+ 766      455F4556 
+ 766      545F4741 
+ 766      5454535F 
+ 766      57524954 
+ 767              	.LASF53:
+ 768 05ee 4359424C 		.ascii	"CYBLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
+ 768      455F4556 
+ 768      545F4741 
+ 768      5454435F 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 20
+
+
+ 768      46494E44 
+ 769              	.LASF25:
+ 770 0615 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_COMPLETE\000"
+ 770      455F4556 
+ 770      545F4741 
+ 770      505F4155 
+ 770      54485F43 
+ 771              	.LASF8:
+ 772 0631 756E7369 		.ascii	"unsigned int\000"
+ 772      676E6564 
+ 772      20696E74 
+ 772      00
+ 773              	.LASF46:
+ 774 063e 4359424C 		.ascii	"CYBLE_EVT_GATT_CONNECT_IND\000"
+ 774      455F4556 
+ 774      545F4741 
+ 774      54545F43 
+ 774      4F4E4E45 
+ 775              	.LASF5:
+ 776 0659 6C6F6E67 		.ascii	"long unsigned int\000"
+ 776      20756E73 
+ 776      69676E65 
+ 776      6420696E 
+ 776      7400
+ 777              	.LASF22:
+ 778 066b 4359424C 		.ascii	"CYBLE_EVT_GAP_AUTH_REQ\000"
+ 778      455F4556 
+ 778      545F4741 
+ 778      505F4155 
+ 778      54485F52 
+ 779              	.LASF75:
+ 780 0682 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 780      455F4556 
+ 780      545F4C32 
+ 780      4341505F 
+ 780      43424643 
+ 781              	.LASF30:
+ 782 06a3 4359424C 		.ascii	"CYBLE_EVT_GAP_ENCRYPT_CHANGE\000"
+ 782      455F4556 
+ 782      545F4741 
+ 782      505F454E 
+ 782      43525950 
+ 783              	.LASF41:
+ 784 06c0 4359424C 		.ascii	"CYBLE_EVT_GAP_CONN_ESTB\000"
+ 784      455F4556 
+ 784      545F4741 
+ 784      505F434F 
+ 784      4E4E5F45 
+ 785              	.LASF69:
+ 786 06d8 4359424C 		.ascii	"CYBLE_EVT_GATTC_LONG_PROCEDURE_END\000"
+ 786      455F4556 
+ 786      545F4741 
+ 786      5454435F 
+ 786      4C4F4E47 
+ 787              	.LASF33:
+ 788 06fb 4359424C 		.ascii	"CYBLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 788      455F4556 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 21
+
+
+ 788      545F4741 
+ 788      505F4B45 
+ 788      59494E46 
+ 789              	.LASF84:
+ 790 071f 4359424C 		.ascii	"CYBLE_EVT_FLASH_CORRUPT\000"
+ 790      455F4556 
+ 790      545F464C 
+ 790      4153485F 
+ 790      434F5252 
+ 791              	.LASF31:
+ 792 0737 4359424C 		.ascii	"CYBLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 792      455F4556 
+ 792      545F4741 
+ 792      505F434F 
+ 792      4E4E4543 
+ 793              	.LASF40:
+ 794 0760 4359424C 		.ascii	"CYBLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
+ 794      455F4556 
+ 794      545F4741 
+ 794      505F534D 
+ 794      505F4E45 
+ 795              	.LASF11:
+ 796 0787 63686172 		.ascii	"char\000"
+ 796      00
+ 797              	.LASF72:
+ 798 078c 4359424C 		.ascii	"CYBLE_EVT_L2CAP_COMMAND_REJ\000"
+ 798      455F4556 
+ 798      545F4C32 
+ 798      4341505F 
+ 798      434F4D4D 
+ 799              	.LASF3:
+ 800 07a8 73686F72 		.ascii	"short unsigned int\000"
+ 800      7420756E 
+ 800      7369676E 
+ 800      65642069 
+ 800      6E7400
+ 801              	.LASF21:
+ 802 07bb 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
+ 802      455F4556 
+ 802      545F4741 
+ 802      50435F53 
+ 802      43414E5F 
+ 803              	.LASF86:
+ 804 07df 75696E74 		.ascii	"uint16\000"
+ 804      313600
+ 805              	.LASF55:
+ 806 07e6 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BLOB_RSP\000"
+ 806      455F4556 
+ 806      545F4741 
+ 806      5454435F 
+ 806      52454144 
+ 807              	.LASF62:
+ 808 0804 4359424C 		.ascii	"CYBLE_EVT_GATTC_EXEC_WRITE_RSP\000"
+ 808      455F4556 
+ 808      545F4741 
+ 808      5454435F 
+ 808      45584543 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 22
+
+
+ 809              	.LASF32:
+ 810 0823 4359424C 		.ascii	"CYBLE_EVT_GAPC_SCAN_START_STOP\000"
+ 810      455F4556 
+ 810      545F4741 
+ 810      50435F53 
+ 810      43414E5F 
+ 811              	.LASF81:
+ 812 0842 4359424C 		.ascii	"CYBLE_EVT_PENDING_FLASH_WRITE\000"
+ 812      455F4556 
+ 812      545F5045 
+ 812      4E44494E 
+ 812      475F464C 
+ 813              	.LASF78:
+ 814 0860 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 814      455F4556 
+ 814      545F4C32 
+ 814      4341505F 
+ 814      43424643 
+ 815              	.LASF10:
+ 816 0883 646F7562 		.ascii	"double\000"
+ 816      6C6500
+ 817              	.LASF79:
+ 818 088a 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 818      455F4556 
+ 818      545F4C32 
+ 818      4341505F 
+ 818      43424643 
+ 819              	.LASF88:
+ 820 08ad 63757374 		.ascii	"customServCharHandle\000"
+ 820      6F6D5365 
+ 820      72764368 
+ 820      61724861 
+ 820      6E646C65 
+ 821              	.LASF42:
+ 822 08c2 4359424C 		.ascii	"CYBLE_EVT_GAP_SCAN_REQ_RECVD\000"
+ 822      455F4556 
+ 822      545F4741 
+ 822      505F5343 
+ 822      414E5F52 
+ 823              	.LASF17:
+ 824 08df 4359424C 		.ascii	"CYBLE_EVT_HARDWARE_ERROR\000"
+ 824      455F4556 
+ 824      545F4841 
+ 824      52445741 
+ 824      52455F45 
+ 825              	.LASF77:
+ 826 08f8 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_READ\000"
+ 826      455F4556 
+ 826      545F4C32 
+ 826      4341505F 
+ 826      43424643 
+ 827              	.LASF71:
+ 828 0917 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 828      455F4556 
+ 828      545F4C32 
+ 828      4341505F 
+ 828      434F4E4E 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 23
+
+
+ 829              	.LASF73:
+ 830 093d 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 830      455F4556 
+ 830      545F4C32 
+ 830      4341505F 
+ 830      43424643 
+ 831              	.LASF50:
+ 832 095b 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 832      455F4556 
+ 832      545F4741 
+ 832      5454435F 
+ 832      52454144 
+ 833              	.LASF59:
+ 834 0982 4359424C 		.ascii	"CYBLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 834      455F4556 
+ 834      545F4741 
+ 834      5454535F 
+ 834      57524954 
+ 835              	.LASF51:
+ 836 09a0 4359424C 		.ascii	"CYBLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 836      455F4556 
+ 836      545F4741 
+ 836      5454435F 
+ 836      52454144 
+ 837              	.LASF49:
+ 838 09c1 4359424C 		.ascii	"CYBLE_EVT_GATTC_XCHNG_MTU_RSP\000"
+ 838      455F4556 
+ 838      545F4741 
+ 838      5454435F 
+ 838      5843484E 
+ 839              	.LASF80:
+ 840 09df 4359424C 		.ascii	"CYBLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 840      455F4556 
+ 840      545F4C32 
+ 840      4341505F 
+ 840      43424643 
+ 841              	.LASF16:
+ 842 0a03 4359424C 		.ascii	"CYBLE_EVT_TIMEOUT\000"
+ 842      455F4556 
+ 842      545F5449 
+ 842      4D454F55 
+ 842      5400
+ 843              	.LASF85:
+ 844 0a15 4359424C 		.ascii	"CYBLE_EVT_MAX\000"
+ 844      455F4556 
+ 844      545F4D41 
+ 844      5800
+ 845              	.LASF68:
+ 846 0a23 4359424C 		.ascii	"CYBLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
+ 846      455F4556 
+ 846      545F4741 
+ 846      5454535F 
+ 846      52454144 
+ 847              	.LASF67:
+ 848 0a4c 4359424C 		.ascii	"CYBLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 848      455F4556 
+ 848      545F4741 
+ARM GAS  C:\Users\alexis\AppData\Local\Temp\ccENgbBh.s 			page 24
+
+
+ 848      5454435F 
+ 848      53544F50 
+ 849              	.LASF61:
+ 850 0a6e 4359424C 		.ascii	"CYBLE_EVT_GATTS_EXEC_WRITE_REQ\000"
+ 850      455F4556 
+ 850      545F4741 
+ 850      5454535F 
+ 850      45584543 
+ 851              	.LASF87:
+ 852 0a8d 4359424C 		.ascii	"CYBLE_GATT_DB_ATTR_HANDLE_T\000"
+ 852      455F4741 
+ 852      54545F44 
+ 852      425F4154 
+ 852      54525F48 
+ 853              	.LASF98:
+ 854 0aa9 6379426C 		.ascii	"cyBle_customs\000"
+ 854      655F6375 
+ 854      73746F6D 
+ 854      7300
+ 855              	.LASF66:
+ 856 0ab7 4359424C 		.ascii	"CYBLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
+ 856      455F4556 
+ 856      545F4741 
+ 856      5454535F 
+ 856      44415441 
+ 857              	.LASF83:
+ 858 0adb 4359424C 		.ascii	"CYBLE_EVT_HCI_PKT\000"
+ 858      455F4556 
+ 858      545F4843 
+ 858      495F504B 
+ 858      5400
+ 859              	.LASF36:
+ 860 0aed 4359424C 		.ascii	"CYBLE_EVT_GAP_OOB_GENERATED_NOTIFICATION\000"
+ 860      455F4556 
+ 860      545F4741 
+ 860      505F4F4F 
+ 860      425F4745 
+ 861              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
